@@ -1,11 +1,12 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        sum_arr = {}
-        i = 0
-        while i < len(nums):
-            num = nums[i]
-            diff = target - num
-            if diff in sum_arr:
-                return [sum_arr[diff],i]
-            sum_arr[num] = i
-            i+=1
+        dic = {}
+        # for i in range(len(nums)):
+        #     dic[nums[i]] = i
+        for num in range(len(nums)):
+            dif = abs(target - nums[num])
+            if dif in dic:
+                return [num,dic[dif]]
+            dic[nums[num]] = num 
+
+        # return dic
